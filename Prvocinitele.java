@@ -1,4 +1,3 @@
-/* Vypise rozklad na prvocinitele. */
 public class Prvocinitele {
 	public static void main(String[] args) {
 		java.util.Scanner scanner = new java.util.Scanner(System.in);
@@ -13,14 +12,22 @@ public class Prvocinitele {
 			
 			System.out.printf("%d =", cislo);
 			int delitel = 2;
+			boolean first = true;
 			while (delitel <= cislo) {
-				if ((cislo % delitel) == 0) {
+				if ((cislo % delitel) == 0) {	
+				    if (first){
 					System.out.printf(" %d", delitel);
-					cislo /= delitel;
+					first = false;
+				    } else {
+					System.out.printf(" * %d", delitel);
+				    }
+				    	cislo /= delitel;
+		       		} else {			    
+				    delitel++;
 				}
-				delitel++;
-			}
+			}				
 			System.out.println();
 		}
 	}
 }
+
